@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function indexOf(firstString, secondString) {
+
+        for (i = 0; i < firstString.length; i++) {
+          var substr = firstString.slice(i, i + secondString.length);
+          if (substr === secondString) {
+            console.log(i);
+            return;
+          }
+        }
+        console.log(-1);
+      }
+    </script>
+  </body>
+</html>
