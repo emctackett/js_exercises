@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function gcd(num1, num2) {
+        while (num2 !== 0) {
+          var remainder = (num1 % num2);
+          num1 = num2;
+          num2 = remainder;
+        }
+        return num1;
+      }
+
+      gcd(48, 18);
+      gcd(12, 4);
+      gcd(15, 10);
+      gcd(9, 2);
+    </script>
+  </body>
+</html>
