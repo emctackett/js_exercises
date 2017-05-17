@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function isXor(a, b) {
+        if ((a && !b) || (!a && b)) {
+          return true;
+        }
+
+        return false
+      }
+
+      isXor(false, true);
+      isXor(true, false);
+      isXor(false, false);
+      isXor(true, true);
+
+      isXor(false, 3);
+      isXor('a', undefined);
+      isXor(null, '');
+      isXor('2', 23);
+    </script>
+  </body>
+</html>

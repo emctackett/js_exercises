@@ -1,0 +1,13 @@
+var a 
+
+var setScope
+
+a = 'outer';
+
+setScope = function() {
+  a = 'inner';
+}
+
+console.log(a);
+setScope();
+console.log(a);

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function sum(values) {
+        var total = 0;
+        for (var i = 0, length = values.length; i < length; i++) {
+          total += values[i];
+        }
+        return total
+      }
+      function average(values) {
+        return sum(values) / values.length;
+      }
+
+      var temperatures = [12, 24, 26, 32, 41];
+      console.log(average(temperatures));
+    </script>
+  </body>
+</html>
