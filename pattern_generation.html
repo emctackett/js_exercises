@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function generatePattern(n) {
+        var nums = []
+
+        for (i = 1; i <= n; i++) {
+          nums.push(i)
+          console.log(nums.join('') + '*'.repeat(n - i));
+        }
+      }
+
+      generatePattern(7);
+    </script>
+  </body>
+</html>
