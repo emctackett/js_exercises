@@ -4,21 +4,33 @@
   </head>
   <body>
     <script>
-      function substr(string, start, length) {
-        var substring = ''
+      function newChar(alphabet, character, upper = false) {
+        var newIndex = (alphabet.indexOf(character) + 13) % 26;
+        var newChar = alphabet[newIndex];
 
-        if (start < 0) {
-          start = string.length + start;
+        if (upper === true) {
+          newChar = newChar.toUpperCase();
         }
 
-        for (var i = start; i - start < length; i++) {
-          if (i >= string.length) {
-            break;
+        return newChar;
+      }
+
+
+      function rot13(string) {
+        var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        var rotString = '';
+
+        for (i = 0; i < string.length; i++) {
+          if (alphabet.toUpperCase().includes(string[i])) {
+            rotString += newChar(alphabet.toUpperCase(), string[i], true);
+          } else if (alphabet.includes(string[i])) {
+            rotString += newChar(alphabet, string[i]);
+          } else {
+            rotString += string[i];
           }
-          substring += string[i];
         }
 
-        return substring;
+        return rotString;
       }
     </script>
   </body>
