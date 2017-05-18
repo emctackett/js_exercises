@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function substr(string, start, length) {
+        var substring = ''
+
+        if (start < 0) {
+          start = string.length + start;
+        }
+
+        for (var i = start; i - start < length; i++) {
+          if (i >= string.length) {
+            break;
+          }
+          substring += string[i];
+        }
+
+        return substring;
+      }
+    </script>
+  </body>
+</html>
