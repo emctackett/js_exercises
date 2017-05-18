@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function toLowerCase(string) {
+        lowercase = '';
+
+        for (i = 0; i < string.length; i++) {
+          var asciiNumeric = string.charCodeAt(i);
+
+          if (asciiNumeric >= 65 && asciiNumeric <= 90) {
+            asciiNumeric += 32;
+            lowercase += String.fromCharCode(asciiNumeric);
+          } else {
+            lowercase += string[i];
+          }
+        }
+
+        return lowercase;
+      }
+    </script>
+  </body>
+</html>
