@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function lastNOf(arr, count) {
+        var startPosition = arr.length - count;
+
+        if (startPosition < 0) {
+          startPosition = 0;
+        }
+
+        return arr.slice(startPosition);
+      }
+
+      var digits = [4, 8, 15, 16, 23, 42];
+
+      console.log(lastNOf(digits, 9));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function joinArray(arr, joiner) {
+        var joinedStr = '';
+
+        if (joiner === undefined) {
+          joiner = '';
+        }
+
+        for (var i = 0; i < arr.length; i++) {
+          joinedStr += String(arr[i]);
+
+          if (i < arr.length - 1) {
+            joinedStr += String((joiner));
+          }
+        }
+
+        return joinedStr;
+      }
+    </script>
+  </body>
+</html>
