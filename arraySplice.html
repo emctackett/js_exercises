@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function splice(arr, startIndex, num) {
+        var removedValues = [];
+
+        for (var i = startIndex; i < arr.length; i++) {
+          if (i < startIndex + num) {
+            removedValues.push(arr[i]);
+          }
+
+          arr[i] = arr[i + num];
+        }
+
+        arr.length = arr.length - num;
+        return removedValues;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function join(arr, str) {
+        var joinedStr = '';
+
+        for (var i = 0; i < arr.length; i++) {
+          joinedStr += String(arr[i]);
+
+          if (i < arr.length - 1) {
+            joinedStr += str;
+          }
+        }
+
+        return joinedStr;
+      }
+    </script>
+  </body>
+</html>
