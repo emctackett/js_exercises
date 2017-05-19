@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function unshift(arr, value) {
+        for (i = arr.length - 1; i >= 0; i--) {
+          var newIndex = i + 1;
+          arr[newIndex] = arr[i];
+        }
+
+        arr[0] = value;
+        return arr.length;
+      }
+    </script>
+  </body>
+</html>
