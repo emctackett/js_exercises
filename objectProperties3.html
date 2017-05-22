@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function copyProperties(obj1, obj2) {
+        var property;
+
+        for (property in obj1) {
+          obj2[property] = obj1[property];
+        }
+
+        return Object.keys(obj2).length;
+      }
+    </script>
+  </body>
+</html>

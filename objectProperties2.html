@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function incrementProperty(object, name) {
+        if (Object.keys(object).includes(name)) {
+          object[name] += 1;
+        } else {
+          object[name] = 1;
+        }
+
+        return object[name];
+      }
+    </script>
+  </body>
+</html>

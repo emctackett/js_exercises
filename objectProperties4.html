@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function wordCount(str) {
+        var wordArray = str.split(' ');
+        var countObject = {};
+
+        for (var i = 0; i < wordArray.length; i++) {
+          if (countObject[wordArray[i]]) {
+            countObject[wordArray[i]] += 1;
+          } else {
+            countObject[wordArray[i]] = 1;
+          }
+        }
+
+        return countObject;
+      }
+    </script>
+  </body>
+</html>
