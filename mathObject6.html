@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+    <script>
+      function random(min, max) {
+        var difference;
+
+        if (min === max) {
+          return min;
+        }
+
+        difference = max - min + 1;
+        return Math.floor(Math.random() * difference) + min;
+      }
+
+      console.log(random(1, 5));
+    </script>
+  </body>
+</html>
