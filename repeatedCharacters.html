@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function repeatedCharacters(word) {
+        var wordArr = word.toLowerCase().split('');
+        var repeatedChars = {};
+        var char;
+        var count;
+
+        for (var i = 0; i < wordArr.length; i++) {
+          char = wordArr[i];
+          if (!repeatedChars[char]) {
+            repeatedChars[char] = 0;
+          }
+
+          repeatedChars[wordArr[i]] += 1;
+        }
+
+        for (count in repeatedChars) {
+          if (repeatedChars[count] < 2) {
+            delete repeatedChars[count];
+          }
+        }
+        return repeatedChars;
+      }
+    </script>
+  </body>
+</html>

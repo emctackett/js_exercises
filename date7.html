@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <charset = "utf-8">
+  </head>
+  <body>
+    <script>
+      var today = new Date();
+      var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+      function dateSuffix(date) {
+        var suffix;
+        var lastDigit = date.slice(-1);
+
+        switch (lastDigit) {
+          case '1':
+            suffix = 'st';
+            break;
+          case '2':
+            suffix = 'nd';
+            break;
+          case '3':
+            suffix = 'rd';
+            break;
+          default:
+            suffix = 'th';
+        }
+
+        return suffix;
+      }
+
+      console.log("Today's day is " + daysOfWeek[today.getDay()] + " the " + String(today.getDate()) + dateSuffix(String(today.getDate())));
+    </script>
+  </body>
+</html>

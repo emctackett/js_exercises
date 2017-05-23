@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function greetings(nameArr, obj) {
+        var nameGreet = 'Hello, ' + nameArr.join(' ') + '!';
+        var statusGreet = 'Nice to have a ' + obj.title + ' ' + obj.occupation + ' around.'
+
+        console.log(nameGreet + ' ' + statusGreet);
+      }
+
+      greetings(['John', 'Q', 'Doe'], { title: 'Master', occupation: 'Plumber'});
+    </script>
+  </body>
+</html>

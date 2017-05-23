@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <charset = "utf-8">
+  </head>
+  <body>
+    <script>
+      var today = new Date();
+      var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+
+      function formattedMonth(today) {
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return months[today.getMonth()];
+      }
+
+      function formattedDay(today) {
+        var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        return daysOfWeek[today.getDay()];
+      }
+
+      function dateSuffix(date) {
+        date = String(date);
+        var suffix;
+        var lastDigit = date.slice(-1);
+
+        switch (lastDigit) {
+          case '1':
+            suffix = 'st';
+            break;
+          case '2':
+            suffix = 'nd';
+            break;
+          case '3':
+            suffix = 'rd';
+            break;
+          default:
+            suffix = 'th';
+        }
+
+        return date + suffix;
+      }
+
+      function formattedDate(today) {
+        var day = formattedDay(today);
+        var month = formattedMonth(today);
+        console.log("Today's day is " + day + " " + month + " " + dateSuffix(today.getDate()));
+      }
+
+      formattedDate(today);
+    </script>
+  </body>
+</html>
