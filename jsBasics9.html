@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function integerToString(integer) {
+        var strDigits = [];
+        var remainder;
+
+        while (integer > 0) {
+          remainder = integer % 10;
+          integer = Math.floor(integer / 10);
+          strDigits.push(remainder);
+        }
+        return strDigits.reverse().join('') || '0';
+      }
+    </script>
+  </body>
+</html>

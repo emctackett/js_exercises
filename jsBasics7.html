@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function stringToInteger(string) {
+        var digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        var i;
+        var n;
+        var integer = 0;
+
+        for (i = 0; i < string.length; i += 1) {
+          n = digits.indexOf(string[i]);
+          integer = (integer * 10) + n;
+        }
+
+        return integer;
+      }
+    </script>
+  </body>
+</html>
