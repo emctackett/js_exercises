@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function reverse(input) {
+        var reversedIdx;
+        var reversedInput;
+
+        if (Array.isArray(input)) {
+          reversedIdx = 0;
+          reversedInput = [];
+
+          for (var i = input.length - 1; i >= 0; i--) {
+            reversedInput[reversedIdx] = input[i];
+            reversedIdx += 1;
+          }
+        } else {
+          reversedInput = '';
+
+          for (var i = input.length - 1; i >= 0; i--) {
+            reversedInput += input[i];
+          }
+        }
+
+        return reversedInput;
+      }
+    </script>
+  </body>
+</html>

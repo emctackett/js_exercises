@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+    function shift(arr) {
+      var shiftedVal = arr[0];
+
+      if (arr.length !== 0) {
+        result = arr.splice(0, 1).pop();
+      }
+
+      return shiftedVal;
+    }
+
+    function unshift(array) {
+      for (var i = 1; i < arguments.length; i++) {
+        array.splice(i - 1, 0, arguments[i]);
+      }
+
+      return array.length;
+    }
+    </script>
+  </body>
+</html>
