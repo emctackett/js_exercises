@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function areArraysEqual(array1, array2) {
+        if (array1.length !== array2.length) {
+          return false;
+        }
+
+        array1 = array1.slice().sort(function(a, b) {
+          return a < b;
+        });
+        array2 = array2.slice().sort(function(a, b) {
+          return a < b;
+        })
+
+        for (var i = 0; i < array1.length; i++) {
+          if (array1[i] !== array2[i]) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

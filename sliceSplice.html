@@ -5,7 +5,45 @@
   </head>
   <body>
     <script>
+      function slice(array, begin, end) {
+        var newArr = [];
 
+        begin = begin > array.length ? array.length : begin;
+        end = end > array.length ? array.length : end;
+
+        for (var i = begin; i < end; i++) {
+          newArr.push(array[i]);
+        }
+
+        return newArr;
+      }
+
+      function splice(array, start, deleteCount) {
+        var arrayCopy = array.slice();
+        var itemCount = Array.prototype.slice.call(arguments, 3).length;
+        var newLength = array.length + itemCount - deleteCount;
+        array.length = newLength;
+
+        for (var i = 0; i < start; i++) {
+          array[i] = arrayCopy[i];
+        }
+
+        for (var i = 0; i < itemCount; i++) {
+          array[start + i] = arguments[3 + 1];
+        }
+
+        for (var i = 0, length = arrayCopy.length - (start + deleteCount); i < length; i++) {
+          array[start + itemCount + 1] = arrayCopy[start + deleteCount + i];
+        }
+
+        return slice(arrayCopy, start, start + deleteCount);
+      }
+
+      console.log(splice([1, 2, 3], 1, 2));                   // [2, 3]
+      console.log(splice([1, 2, 3], 1, 3));                   // [2, 3]
+      console.log(splice([1, 2, 3], 1, 0));                   // []
+      console.log(splice([1, 2, 3], 0, 1));                   // [1]
+      console.log(splice([1, 2, 3], 1, 0, 'a'))               // []
     </script>
   </body>
 </html>
