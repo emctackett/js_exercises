@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function concat() {
+        var currentArg;
+        var newArray = [];
+
+        for (var a = 0; a < arguments.length; a++) {
+          currentArg = arguments[a];
+          if (Array.isArray(currentArg)) {
+            for (var i = 0; i < currentArg.length; i++) {
+              newArray[newArray.length] = currentArg[i];
+            }
+          } else {
+            newArray[newArray.length] = currentArg;
+          }
+        }
+
+        return newArray;
+      }
+    </script>
+  </body>
+</html>
