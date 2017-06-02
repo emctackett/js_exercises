@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      // function objectHasProperty(object, property) {
+      //   if (object[property] !== undefined) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+
+      function objectHasProperty(object, property) {
+        var keys = Object.keys(object);
+
+        if (keys.includes(property)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // function objectHasProperty(object, property) {
+      //   var keys = Object.keys(object);
+      //   return keys.indexOf(property) !== -1;
+      // }
+
+      var obj = { enabled: false };
+      console.log(objectHasProperty(obj, 'active'));  // returns false
+      console.log(objectHasProperty(obj, 'enabled')); // returns true
+
+      var obj = { enabled: undefined };
+      console.log(objectHasProperty(obj, 'active'));  
+      console.log(objectHasProperty(obj, 'enabled')); 
+    </script>
+  </body>
+</html>
+
