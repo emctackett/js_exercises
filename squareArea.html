@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      var rectangleArea = function(rectangle) {
+        return rectangle[0] * rectangle[1];
+      }
+
+      var areaList = function(rectangles) {
+        var areas = rectangles.map(function(rectangle) {
+          return rectangleArea(rectangle);
+        });
+
+        return areas;
+      }
+
+      function add(sum, area) {
+        return sum + area;
+      }
+
+      function totalArea(rectangles) {
+        return areaList(rectangles).reduce(add);
+      }
+
+      function totalSquareArea(rectangles) {
+        var squares = rectangles.filter(function(rectangle) {
+          return rectangle[0] === rectangle[1];
+        });
+        return totalArea(squares);
+      }
+    </script>
+  </body>
+</html>
