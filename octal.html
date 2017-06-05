@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function octalToDecimal(str) {
+        return str.split('').map(function(digit, idx) {
+          return Number(digit * (8 ** (str.length - (idx + 1))));
+        }).reduce(function(a, b) { return a + b });
+      }
+    </script>
+  </body>
+</html>
