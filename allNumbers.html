@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function myOwnEvery(array, func) {
+        for (var i = 0; i < array.length; i++) {
+          if (!func(array[i])) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      function areAllNumbers(array) {
+        return myOwnEvery(array, isANumber);
+      }
+    </script>
+  </body>
+</html>
