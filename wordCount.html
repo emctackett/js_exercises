@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      var text = 'The quick brown fox jumps over the lazy dog.';
+
+      function countWordInText(word, text) {
+        var textArray = text.replace(/[^a-z ]/ig, '').split(' ');
+
+        return textArray.filter(function(wordInText) {
+          return word.toLowerCase() === wordInText.toLowerCase();
+        }).length;
+      }
+
+      console.log(countWordInText('the', text));
+      console.log(countWordInText('dog', text));
+    </script>
+  </body>
+</html>
