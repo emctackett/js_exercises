@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      function isAllUnique(string) {
+        var count = {};
+        var lowerStringChars = string.toLowerCase().replace(/\s/g, '');
+
+        for (var i = 0; i < lowerStringChars.length; i++) {
+          if (count[string[i]]) {
+            return false;
+          }
+          count[string[i]] = 1;
+        }
+
+        return true;
+      }gi
+    </script>
+  </body>
+</html>
