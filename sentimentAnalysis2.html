@@ -13,10 +13,10 @@
           var sentimentScore;
 
         text.split(/\b/).forEach(function(word) {
-          if (positiveWords.includes(word)) {
+          if (word.match(positiveRegex)) {
             positiveSeen.push(word);
             return positiveCount += 1;
-          } else if (negativeWords.includes(word)) {
+          } else if (word.match(negativeRegex)) {
             negativeSeen.push(word);
             return negativeCount += 1;
           }
@@ -39,8 +39,9 @@
         console.log('The sentiment of the text is ' + sentimentScore + '.');
       }
 
-      var positiveWords = ['fortune', 'dream', 'love', 'respect', 'patience', 'devout', 'noble', 'resolution'];
-      var negativeWords = ['die', 'heartache', 'death', 'despise', 'scorn', 'weary', 'trouble', 'oppress'];
+      var positiveRegex = /(fortunes?)|(dream(s|t|ed)?)|(love(s|d)?)|(respect(s|ed)?)|(patien(ce|t)?)|(devout(ly)?)|(nobler?)|(resolut(e|ion)?)/gi;
+
+      var negativeRegex = /(die(s|d)?)|(heartached?)|(death)|(despise(s|d)?)|(scorn(s|ed)?)|(weary)|(troubles?)|(oppress(es|ed|or('s)?)?)/gi;
 
 
       var textExcerpt = 'To be or not to be-that is the question:\n' +
