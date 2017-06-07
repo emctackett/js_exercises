@@ -4,8 +4,37 @@
     <meta charset="utf-8">
   </head>
   <body>
+    <script src="http://dbdwvr6p7sskw.cloudfront.net/210/files/email_data_v2.js"></script>
     <script>
+      function extractDates(emailList) {
+        var dateList = [];
 
+        emailList.forEach(function(email) {
+          email.split('#/#').filter(function(dataItem, idx) {
+            if (idx === 2) {
+              dateList.push(dataItem.split(' ').slice(1).join());;
+            }
+          });
+        });
+
+        return dateList.sort();
+      }
+
+      function formatDate(dateString) {
+        return new Date(dateString).toDateString();
+      }
+
+      function mailCount(emailData) {
+        var emailList = emailData.split('##||##');
+        var emailCount = emailList.length;
+        var dateList = extractDates(emailList);
+
+
+        console.log('Count of Email: ' + emailCount);
+        console.log('Date Range: ' + formatDate(dateList[0]) + ' - ' + formatDate(dateList[dateList.length - 1]));
+      }
+
+      mailCount(emailData);
     </script>
   </body>
 </html>
