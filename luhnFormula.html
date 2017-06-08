@@ -1,0 +1,39 @@
+<html>
+  <script>
+      function alterDigits(list) {
+        return list.map(function(value, idx) {
+          if (idx % 2 !== 0) {
+            value = value * 2;
+            return value >= 10 ? (value - 9) : value;
+          }
+
+          return value;
+        });
+      }
+
+      function luhn(str) {
+        var digits, sum;
+        str = str.replace(/\D/g, '');
+
+        digits = str.split('').map(Number).reverse();
+
+        sum = alterDigits(digits).reduce(function(total, num) {
+          return total += num;
+        });
+
+        return sum % 10 === 0;
+      }
+
+      function checkNumber(str) {
+        if (luhn(str)) {
+          return str;
+        }
+
+        for (var i = 1; i <= 9; i++) {
+          if (luhn(str + String(i))) {
+            return str + String(i);
+          }
+        }
+      }
+  </script>
+</html>
