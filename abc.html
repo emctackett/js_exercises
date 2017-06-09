@@ -1,5 +1,47 @@
 <html>
   <script>
-    //
+    var LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                  'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                  'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    function findMatch(allChars, char) {
+      var matchingChar;
+      var charIndex = LETTERS.indexOf(char);
+
+      if (charIndex > 12) {
+        matchingChar = LETTERS[charIndex - 13];
+      } else {
+        matchingChar = LETTERS[charIndex + 13];
+      }
+
+      return allChars.includes(matchingChar);
+    }
+
+    function isBlockWord(word) {
+      var counts = {};
+      var currentChar;
+      var wordChars = word.toUpperCase().split('');
+
+      for (var i = 0; i < wordChars.length; i++) {
+        currentChar = wordChars[i];
+
+        counts[currentChar] = 1 + (counts[currentChar] || 0);
+
+        if (findMatch(wordChars, currentChar) || counts[currentChar] > 1) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    console.log(isBlockWord('BATCH')); // true
+    console.log(isBlockWord('BUTCH')); // false
+    console.log(isBlockWord('jest')); // true
+    console.log(isBlockWord('floW'));  // true
+    console.log(isBlockWord('APPLE')); // false
+    console.log(isBlockWord('apple')); // false
+    console.log(isBlockWord('apPLE')); // false
+    console.log(isBlockWord('Box'));   // false
   </script>
 </html>
