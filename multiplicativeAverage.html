@@ -1,0 +1,15 @@
+<html>
+  <script>
+    function showMultiplicativeAverage(list) {
+      var sum = list.reduce(function(a, b) { return a * b });
+      var average = sum / list.length;
+
+      return average.toFixed(3);
+    }
+
+    console.log(showMultiplicativeAverage([3, 5]));
+    // '7.500'
+    console.log(showMultiplicativeAverage([2, 5, 7, 11, 13, 17]));
+    // '28361.667'
+  </script>
+</html>
