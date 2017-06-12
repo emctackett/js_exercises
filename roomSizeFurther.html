@@ -1,0 +1,21 @@
+<html>
+  <script>
+    FEET_PER_SQ_METER = 10.7639;
+
+    var inputType = prompt('Is this data in feet or meters?');
+    var length = parseInt(prompt('Enter the length of the room:'), 10);
+    var width = parseInt(prompt('Enter the width of the room:'), 10);
+    var areaMeters;
+    var squareFeet;
+
+    if (inputType === 'meters') {
+      areaMeters = length * width;
+      squareFeet = areaMeters * FEET_PER_SQ_METER;
+      console.log('The area of the room is ' + areaMeters.toFixed(1) + ' square meters (' + squareFeet.toFixed(2) + ' square feet).');
+    } else {
+      squareFeet = length * width;
+      areaMeters = squareFeet / FEET_PER_SQ_METER;
+      console.log('The area of the room is ' + squareFeet.toFixed(2) + ' square feet (' + areaMeters.toFixed(1) + ' square meters).');
+    }
+  </script>
+</html>

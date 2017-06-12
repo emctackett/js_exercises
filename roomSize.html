@@ -1,0 +1,14 @@
+<html>
+  <script>
+    FEET_PER_SQ_METER = 10.7639;
+
+    var length = parseInt(prompt('Enter the length of the room in meters:'), 10);
+    var width = parseInt(prompt('Enter the width of the room in meters:'), 10);
+    var areaMeters = length * width;
+    var squareFeet = areaMeters * FEET_PER_SQ_METER;
+
+
+    console.log('The area of the room is ' + areaMeters.toFixed(1) + ' square meters (' + squareFeet.toFixed(2) + ' square feet).');
+
+  </script>
+</html>
