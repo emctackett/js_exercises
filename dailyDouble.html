@@ -1,0 +1,23 @@
+<html>
+  <script>
+    function crunch(str) {
+      var crunchedStr = str[0] || '';
+      var i;
+
+      for (i = 1; i < str.length; i++) {
+        if (str[i - 1] !== str[i]) {
+          crunchedStr += str[i];
+        }
+      }
+
+
+      return crunchedStr;
+    }
+
+    console.log(crunch('ddaaiillyy ddoouubbllee'));        // 'daily double'
+    console.log(crunch('4444abcabccba'));                  // '4abcabcba'
+    console.log(crunch('ggggggggggggggg'));                // 'g'
+    console.log(crunch('a'));                              // 'a'
+    console.log(crunch(''));                               // ''
+  </script>
+</html>
