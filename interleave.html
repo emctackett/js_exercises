@@ -1,0 +1,15 @@
+<html>
+  <script>
+    function interleave(arr1, arr2) {
+      var zipped = [];
+
+      arr1.forEach(function(value, idx) {
+        zipped.push(value, arr2[idx]);
+      });
+      return zipped;
+    }
+
+    console.log(interleave([1, 2, 3], ['a', 'b', 'c']));
+    // [1, 'a', 2, 'b', 3, 'c'])
+  </script>
+</html>
