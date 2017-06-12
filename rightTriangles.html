@@ -1,0 +1,17 @@
+<html>
+  <script>
+    function triangle(num) {
+      var padding = num - 1;
+      var starCount = 1;
+
+      do {
+        console.log(' '.repeat(padding) + '*'.repeat(starCount));
+        padding -= 1;
+        starCount += 1;
+      } while (starCount <= num);
+    }
+
+    console.log(triangle(5));
+    console.log(triangle(9));
+  </script>
+</html>
