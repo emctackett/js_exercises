@@ -1,0 +1,21 @@
+<html>
+  <script>
+    function findFibonacciIndexByLength(digits) {
+      var i;
+      var first = 1;
+      var last = 1;
+      var fibNum = 2;
+
+      for (i = 3; String(fibNum).length < digits; i++) {
+        first = last;
+        last = fibNum;
+        fibNum = first + last;
+      }
+      return i;
+    }
+
+    console.log(findFibonacciIndexByLength(2));     // 7
+    console.log(findFibonacciIndexByLength(10));    // 45
+    console.log(findFibonacciIndexByLength(16));    // 74
+  </script>
+</html>
