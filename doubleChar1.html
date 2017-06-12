@@ -1,0 +1,18 @@
+<html>
+  <script>
+    function repeater(string) {
+      return string.split('').map(function(char) {
+        if (char.match(/[b-z]/gi) && char.match(/[^aeiou]/gi)) {
+          return char.repeat(2)
+        } else {
+          return char;
+        }
+      }).join('');
+    }
+
+    console.log(repeater('String'));
+    console.log(repeater("Hello-World!")); // "GGoooodd  jjoobb!!"
+    console.log(repeater('July 4th'));
+    console.log(repeater(''));
+  </script>
+</html>
