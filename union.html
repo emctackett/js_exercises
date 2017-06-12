@@ -1,0 +1,17 @@
+<html>
+  <script>
+    function union(arr1, arr2) {
+      var unitedArr = arr1.slice();
+
+      arr2.forEach(function(value) {
+        if (!unitedArr.includes(value)) {
+          unitedArr.push(value);
+        }
+      });
+
+      return unitedArr;
+    }
+
+    console.log(union([1, 3, 5], [3, 6, 9]));
+  </script>
+</html>
