@@ -1,0 +1,27 @@
+<html>
+  <script>
+    function doubleNum(number) {
+      var strNum = String(number);
+      var middleIndex = strNum.length / 2
+      var firstHalf = strNum.slice(0, middleIndex);
+      var lastHalf = strNum.slice(middleIndex);
+      return firstHalf === lastHalf;
+    }
+
+    function twice(number) {g
+      if (doubleNum(number)) {
+        return number;
+      }
+      return number * 2;
+    }
+
+    console.log(twice(37));                 // 74
+    console.log(twice(44));                 // 44
+    console.log(twice(334433));             // 668866
+    console.log(twice(444));                // 888
+    console.log(twice(107));                // 214
+    console.log(twice(103103));             // 103103
+    console.log(twice(3333));               // 3333
+    console.log(twice(7676));               // 7676
+  </script>
+</html>
