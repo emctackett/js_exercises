@@ -1,0 +1,19 @@
+<html>
+  <script>
+    function countOccurrences(list) {
+      var count = {};
+
+      list.forEach(function(item) {
+        count[item] = count[item] || 0;
+        count[item] += 1;
+      });
+
+      Object.keys(count).forEach(function(key) {
+        console.log(key + ' => ' + count[key]);
+      });
+    }
+
+    var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
+    console.log(countOccurrences(vehicles));
+  </script>
+</html>
