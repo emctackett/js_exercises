@@ -1,0 +1,19 @@
+<html>
+  <script>
+    function centerOf(str) {
+      var middleIdx = Math.floor(str.length / 2);
+
+      if (str.length % 2 !== 0) {
+        return str.slice(middleIdx, middleIdx + 1);
+      } else {
+        return str.slice(middleIdx - 1, middleIdx + 1);
+      }
+    }
+
+    console.log(centerOf('I love ruby'));    // 'e'
+    console.log(centerOf('Launch School'));  // ' '
+    console.log(centerOf('Launch'));         // 'un'
+    console.log(centerOf('Launchschool'));   // 'hs'
+    console.log(centerOf('x'));              // 'x'
+  </script>
+</html>
