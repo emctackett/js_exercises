@@ -1,0 +1,14 @@
+<html>
+  <script>
+    function wordToDigit(string) {
+      var digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+      return string.split(/(\. | )/g).map(function(wrd) {
+        return digits.includes(wrd) ? String(digits.indexOf(wrd)) : wrd;
+      }).join('');
+    }
+
+    console.log(wordToDigit('Please call me at five five five one two three four. Thanks.'));
+    //'Please call me at 5 5 5 1 2 3 4. Thanks.'
+  </script>
+</html>
