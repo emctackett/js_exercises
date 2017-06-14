@@ -1,0 +1,29 @@
+<html>
+  <script>
+    function rotateRightmostDigits(number, digits) {
+      var strDigits = number.toString().split('');
+      var rotateIndex = strDigits.length - digits;
+
+      return Number(strDigits.slice(0, rotateIndex).concat(rotateArray(strDigits.slice(rotateIndex))).join(''));
+    }
+
+
+
+    function rotateArray(arr) {
+      if (!Array.isArray(arr)) {
+        return;
+      } else if (arr.length === 0) {
+        return arr;
+      }
+
+      return arr.slice(1).concat(arr[0]);
+    }
+
+    console.log(rotateRightmostDigits(735291, 1)); // 735291
+    console.log(rotateRightmostDigits(735291, 2)); // 735219
+    console.log(rotateRightmostDigits(735291, 3)); // 735912
+    console.log(rotateRightmostDigits(735291, 4)); // 732915
+    console.log(rotateRightmostDigits(735291, 5)); // 752913
+    console.log(rotateRightmostDigits(735291, 6)); // 352917
+  </script>
+</html>
