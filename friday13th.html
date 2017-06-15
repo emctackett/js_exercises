@@ -1,0 +1,28 @@
+<html>
+  <script>
+  // PROBLEM
+    // input -- year (number)
+    // return -- integer -- number of friday the 13ths in the year argument
+
+  // Date object
+
+
+    function fridayThe13ths(year) {
+      var friday13Count = 0;
+      var date = new Date();
+      var month;
+
+      for (month = 0; month < 12; month++) {
+        date.setFullYear(year, month, 13);
+          if (date.getDay() === 5) {
+            friday13Count++;
+          }
+      }
+
+      return friday13Count;
+    }
+
+    console.log(fridayThe13ths(2015)); // 3
+    console.log(fridayThe13ths(1986)); // 1
+  </script>
+</html>
