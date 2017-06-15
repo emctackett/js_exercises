@@ -1,0 +1,41 @@
+<html>
+  <script>
+    function swapElements(arr, idx) {
+      var temp = arr[idx - 1];
+      arr[idx - 1] = arr[idx];
+      arr[idx] = temp;
+    }
+
+    function bubbleSort(arr) {
+      var n = arr.length;
+      var swapped;
+
+      while (true) {
+        swapped = false;
+        for (var i = 1; i <= n; i++) {
+
+          if (arr[i - 1] > arr[i]) {
+            swapElements(arr, i);
+            swapped = true;
+          }
+
+        }
+        if (!swapped) {
+          break;
+        }
+      }
+    }
+
+    var array = [5, 3];
+    bubbleSort(array);
+    console.log(array);     // [3, 5]
+
+    array = [6, 2, 7, 1, 4]
+    bubbleSort(array);
+    console.log(array);     // [1, 2, 4, 6, 7]
+
+    array = ['Sue', 'Pete', 'Alice', 'Tyler', 'Rachel', 'Kim', 'Bonnie'];
+    bubbleSort(array);
+    console.log(array);     // ['Alice', 'Bonnie', 'Kim', 'Pete', 'Rachel', 'Sue', 'Tyler']
+  </script>
+</html>
