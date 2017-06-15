@@ -1,0 +1,28 @@
+<html>
+  <script>
+    function triangle(a, b, c) {
+      var angles = [a, b, c].sort();
+      var sumOfAngles = angles.reduce(function(total, val) {
+        return total += val;
+      }, 0);
+
+      if (sumOfAngles !== 180 || angles[0] <= 0) {
+        return 'invalid';
+      }
+
+      if (a < 90 && b < 90 && c < 90) {
+        return 'acute';
+      } else if (a > 90 || b > 90 || c > 90) {
+        return 'obtuse';
+      } else {
+        return 'right';
+      }
+    }
+
+    console.log(triangle(60, 70, 50));   // acute
+    console.log(triangle(30, 90, 60));   // right
+    console.log(triangle(120, 50, 10));  // obtuse
+    console.log(triangle(0, 90, 90));    // invalid
+    console.log(triangle(50, 50, 50));   // invalid
+  </script>
+</html>
