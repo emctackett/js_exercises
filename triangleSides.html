@@ -1,0 +1,25 @@
+<html>
+  <script>
+    function triangle(a, b, c) {
+      var sides = [a, b, c].sort();
+
+      if (!sides[0] > 0 || sides[0] + sides[1] <= sides[2]) {
+        return 'invalid';
+      }
+
+      if (a === b & a === c) {
+        return 'equilateral';
+      } else if (a !== b && b !== c && a !== c) {
+        return 'scalene';
+      } else {
+        return 'isosceles';
+      }
+    }
+
+    console.log(triangle(3, 3, 3));   // equilateral
+    console.log(triangle(3, 3, 1.5)); // isosceles
+    console.log(triangle(3, 4, 5));   // scalene
+    console.log(triangle(0, 3, 3));   // invalid
+    console.log(triangle(3, 1, 1));   // invalid
+  </script>
+</html>
