@@ -1,0 +1,51 @@
+<html>
+  <script>
+    function hasUniqueDigits(n) {
+      var unique = [];
+
+      n.toString().split('').forEach(function(val) {
+        if (!unique.includes(val)) { unique.push(val) }
+      });
+      return unique.length === n.toString().length;
+    }
+
+    function isOdd(n) {
+      return n % 2 !== 0;
+    }
+
+    function multipleOfSeven(n) {
+      return n % 7 === 0;
+    }
+
+
+    function featured(n) {
+      var i;
+      var currentNum;
+
+      if (n > 9876543210) {
+        return 'Error.  No greater featured number.'
+      }
+
+      for (i = 1; i < 9876543210; i++) {
+        currentNum = n + i;
+        if (isOdd(currentNum) && multipleOfSeven(currentNum)) {
+          break;
+        }
+      }
+
+      for (i = currentNum; i < 9876543210; i += 14) {
+        if (hasUniqueDigits(i)) {
+          return i;
+        }
+      }
+    }
+
+    console.log(featured(12));        // 21
+    console.log(featured(20));        // 21
+    console.log(featured(21));        // 35
+    console.log(featured(997));       // 1029
+    console.log(featured(1029));      // 1043
+    console.log(featured(999999));    // 1023547
+    console.log(featured(999999987)); // 1023456987
+  </script>
+</html>
