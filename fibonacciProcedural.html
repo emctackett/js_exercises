@@ -1,0 +1,21 @@
+<html>
+  <script>
+    function fibonacci(n) {
+      var n1 = 1;
+      var n2 = 1;
+      var fib = n1 + n2;
+
+      for (var i = 4; i <= n; i++) {
+        n1 = n2;
+        n2 = fib;
+        fib = n1 + n2;
+      }
+      return fib;
+    }
+
+    console.log(fibonacci(4));
+    console.log(fibonacci(20));   // 6765
+    console.log(fibonacci(50));   // 12586269025
+    console.log(fibonacci(100));  // 354224848179261915075
+  </script>
+</html>
