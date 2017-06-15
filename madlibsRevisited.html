@@ -1,0 +1,39 @@
+<html>
+  <script>
+    function madlibs(template) {
+      var adjectives = ['quick', 'lazy', 'sleepy', 'noisy', 'hungry'];
+      var nouns = ['fox', 'dog', 'head', 'leg', 'tail'];
+      var verbs = ['jumps', 'lifts', 'bites', 'licks', 'pats'];
+      var adverbs = ['easily', 'lazily', 'noisily', 'excitedly'];
+      var words = template.split(/(\.| |,|\'s)/g);
+
+      return words.map(function(wrd) {
+        switch (wrd) {
+          case 'adjective':
+            return adjectives[Math.floor(Math.random() * adjectives.length)];
+            break;
+          case 'noun':
+            return nouns[Math.floor(Math.random() * nouns.length)];
+            break;
+          case 'verb':
+            return verbs[Math.floor(Math.random() * verbs.length)];
+            break;
+          case 'adverb':
+            return adverbs[Math.floor(Math.random() * adverbs.length)];
+            break;
+          default:
+            return wrd;
+        }
+      }).join('');
+    }
+
+    var template1 = "The adjective brown noun adverb verb the adjective yellow noun, who adverb verb his noun and looks around."
+
+    var template2 = "The noun verb the noun's noun."
+
+    console.log(madlibs(template1));
+    console.log(madlibs(template1));
+    console.log(madlibs(template2));
+    console.log(madlibs(template2));
+  </script>
+</html>
