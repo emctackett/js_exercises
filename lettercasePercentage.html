@@ -1,0 +1,39 @@
+<html>
+  <script>
+    // PROBLEM
+      // input -- string (at least one char)
+      // return -- object with 3 properties
+        // percentage of characters in string that are -- lowercase, uppercase, neither
+
+    // DATA STRUCTURES
+      // string
+      // array
+      // object
+
+    // ALGORITHM
+      // initialize an object w/3 properties -- upper, lower, neither & set to 0
+      // split string into characters
+      // iterate through string & increment the values of my obj properties -- use regex to identify case of character
+
+      // pass to a calculatePercentage function the string object and str.length (total chars)
+        // reassign the value of each key to total chars/ count * 100.toFixed(2)
+        // return this altered object
+
+    function letterPercentages(str) {
+      var count = str.length;
+
+      return {
+        lowercase: (((str.match(/[a-z]/g) || []).length / count) * 100).toFixed(2),
+        uppercase: (((str.match(/[A-Z]/g) || []).length / count) * 100).toFixed(2),
+        neither: (((str.match(/[^a-z]/gi) || []).length / count) * 100).toFixed(2),
+      };
+    }
+
+    console.log(letterPercentages('abCdef 123'));
+    // { lowercase: 50.00, uppercase: 10.00, neither: 40.00 }
+    console.log(letterPercentages('AbCd +Ef'));
+    // { lowercase: 37.50, uppercase: 37.50, neither: 25.00 }
+    console.log(letterPercentages('123'));
+    // { lowercase: 0.00, uppercase: 0.00, neither: 100.00 }
+  </script>
+</html>
