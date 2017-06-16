@@ -1,0 +1,27 @@
+<html>
+  <script>
+    function transpose(matrix) {
+      var transpose = [];
+
+      for (var i = 0; i < matrix[0].length; i++) {
+        var newRow = [];
+
+        for (var j = 0; j < matrix.length; j++) {
+          newRow.push(matrix[j][i]);
+        }
+        transpose.push(newRow);
+      }
+
+      return transpose;
+    }
+
+    console.log(transpose([[1, 2, 3, 4]]));
+    // [[1], [2], [3], [4]]
+    console.log(transpose([[1], [2], [3], [4]]));
+    // [[1, 2, 3, 4]]
+    console.log(transpose([[1]]));
+    // [[1]]
+    console.log(transpose([[1, 2, 3, 4, 5], [4, 3, 2, 1, 0], [3, 7, 8, 6, 2]]));
+    // [[1, 4, 3], [2, 3, 7], [3, 2, 8], [4, 1, 6], [5, 0, 2]]
+  </script>
+</html>
