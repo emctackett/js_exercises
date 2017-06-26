@@ -1,0 +1,43 @@
+<html>
+  <script>
+    function newIdx(idx, key) {
+      return (idx + key) % 26;
+    }
+
+    function caesarEncrypt(str, key) {
+      var currentIdx;
+      var newLetter;
+      var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+      return str.split('').map(function(chr) {
+        if (chr.match(/[^a-z]/i)) {
+          return chr;
+        } else {
+          currentIdx = alphabet.indexOf(chr.toLowerCase());
+          newLetter = alphabet[newIdx(currentIdx, key)];
+          return chr.match(/[a-z]/) ? newLetter : newLetter.toUpperCase();
+        }
+      }).join('');
+    }
+
+    // Simple shift
+    console.log(caesarEncrypt('A', 0));       // 'A'
+    console.log(caesarEncrypt('A', 3));       // 'D'
+
+    // Wrap around
+    console.log(caesarEncrypt('y', 5));       // 'd'
+    console.log(caesarEncrypt('a', 47));      // 'v'
+
+    // All letters
+    console.log(caesarEncrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 25));
+    // ZABCDEFGHIJKLMNOPQRSTUVWXY
+    console.log(caesarEncrypt('The quick brown fox jumps over the lazy dog!', 5));
+    // Ymj vznhp gwtbs ktc ozrux tajw ymj qfed itl!
+
+    // Many non-letters
+    console.log(caesarEncrypt('There are, as you can see, many punctuations. Right?; Wrong?', 2));
+    // Vjgtg ctg, cu aqw ecp ugg, ocpa rwpevwcvkqpu. Tkijv?; Ytqpi?
+
+    console.log(caesarEncrypt('Hello 45678 Bye', 3));
+  </script>
+</html>
