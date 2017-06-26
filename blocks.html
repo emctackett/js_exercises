@@ -1,0 +1,37 @@
+<html>
+  <script>
+    function findBlock(blocks, char) {
+      return blocks.find(function(block) {
+        return block.includes(char);
+      });
+    }
+
+    function isBlockWord(word) {
+      var idx;
+      var matchingBlock;
+      var blockIndex;
+      var blocks = ['BO', 'XK', 'DQ', 'CP','NA', 'GT', 'RE', 'FS', 'JW',
+                    'HU', 'VI', 'LY', 'ZM'];
+
+      var characters = word.toUpperCase().split('');
+
+      for (var i = 0; i < characters.length; i++) {
+        matchingBlock = findBlock(blocks, characters[i]);
+
+        if (matchingBlock) {
+          idx = blocks.indexOf(matchingBlock);
+          blocks.splice(idx, 1);
+        } else {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    console.log(isBlockWord('BATCH')); // true
+    console.log(isBlockWord('BUTCH')); // false
+    console.log(isBlockWord('jest')); // true
+    console.log(isBlockWord('copy')); // false
+    console.log(isBlockWord('leaf')); // true
+  </script>
+</html>
