@@ -1,0 +1,27 @@
+<html>
+  <script>
+    function print(pad, i) {
+      console.log(' '.repeat(pad) + '*'.repeat(i) + ' '.repeat(pad));
+    }
+
+    function diamond(n) {
+      var i;
+      var pad;
+
+      for (i = 1; i <= n; i += 2) {
+        pad = (n - i) / 2;
+        print(pad, i);
+      }
+
+      for (i = n - 2; i >= 1; i -=2) {
+        pad = (n - i) / 2;
+        print(pad, i);
+      }
+    }
+
+    diamond(1);
+    diamond(3);
+    diamond(7);
+    diamond(9);
+  </script>
+</html>
