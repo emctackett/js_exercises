@@ -1,0 +1,39 @@
+<html>
+  <script>
+    function centerIdx(list) {
+      return Math.floor(list.length / 2);
+    }
+
+    function binarySearch(list, searchItem) {
+      var count = 0;
+      var center = Math.floor(list.length / 2);
+
+      while (true) {
+
+        if (list[center] === searchItem) {
+          return center;
+        } else if (list[center] > searchItem) {
+          center -= centerIdx(list.slice(0, center));
+        } else {
+          center += centerIdx(list.slice(center));
+        }
+
+        count += 1;
+
+        if (count >= list.length / 2) {
+          return -1;
+        }
+      }
+    }
+
+    console.log(binarySearch([1, 5, 7, 11, 23, 45, 65, 89, 102], 77));
+    //-1
+    console.log(binarySearch([1, 5, 7, 11, 23, 45, 65, 89, 102], 89));
+    //7
+    console.log(binarySearch(['Alice', 'Bonnie', 'Kim', 'Pete', 'Rachel', 'Sue', 'Tyler'], 'Peter'));
+    // -1
+    console.log(binarySearch(['Alice', 'Bonnie', 'Kim', 'Pete', 'Rachel', 'Sue', 'Tyler'], 'Tyler'));
+    // 6
+
+  </script>
+</html>

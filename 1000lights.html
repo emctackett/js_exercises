@@ -1,0 +1,29 @@
+<html>
+  <script>
+    function lightsOn(n) {
+      var switches = {};
+      var step = 1;
+
+      for (var i = step; i <= n; i++) {
+        switches[i] = true;
+      }
+
+      while (step <= n) {
+        step += 1;
+        Object.keys(switches).forEach(function(light) {
+          if (light % step === 0) {
+            switches[light] = !switches[light];
+          }
+        });
+      }
+
+      return Object.keys(switches).filter(function(light) {
+        return switches[light] === true;
+      }).map(Number);
+    }
+
+    console.log(lightsOn(5)); // [1, 4]
+    console.log(lightsOn(100)); // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    console.log(lightsOn(3)); // [1]
+  </script>
+</html>
