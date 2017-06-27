@@ -1,0 +1,64 @@
+<html>
+  <script>
+    function findLonghand(num, lastInSequence) {
+      var digit = num;
+      lastInSequence = lastInSequence || 0;
+      num = lastInSequence += 1;
+
+      while (num.toString().slice(-(digit.length)) !== digit) {
+        num += 1;
+      }
+      return num;
+    }
+
+
+    function parseRange(strRange, lastInSequence) {
+      var fullRange = [];
+      var rangeLimits = strRange.split(/\.\.|-|:/g);
+      var rangeBeg = findLonghand(rangeLimits[0], lastInSequence);
+      var rangeEnd = findLonghand(rangeLimits[1], rangeBeg);
+
+      for (var i = rangeBeg; i <= rangeEnd; i++) {
+        fullRange.push(i);
+      }
+
+      return fullRange;
+    }
+
+
+    function numberRange(shorthand) {
+      var result = [];
+
+      shorthand = shorthand.split(', ');
+
+      shorthand.forEach(function(n) {
+        var lastIdx = (result.length - 1) || 0;
+
+        if (n.match(/(\.\.|-|:)/)) {
+          parseRange(n, result[lastIdx]).forEach(function(n) {
+            result.push(n);
+          });
+        } else if (result.length === 0 || Number(n) > result[lastIdx]) {
+          result.push(Number(n));
+        } else {
+          result.push(findLonghand(n, result[lastIdx]));
+        }
+      });
+      return result;
+    }
+
+
+    console.log(numberRange('104..02'));
+    // [104 upto 202]
+    console.log(numberRange("1, 3, 7, 2, 4, 1"));
+    // [1, 3, 7, 12, 14, 21]
+    console.log(numberRange("1-3, 1-2"));
+    // [1, 2, 3, 11, 12]
+    console.log(numberRange("1:3, 1:2"));
+    // [1, 2, 3, 11, 12]
+    console.log(numberRange("1..3, 1..2"));
+    // [1, 2, 3, 11, 12]
+    console.log(numberRange("1, 3, 5, 7-8, 9:2, 1, 5..8"));
+    // [1, 3, 5, 7, 8, 9, 10, 11, 12, 21, 25, 26, 27, 28]
+  </script>
+</html>
