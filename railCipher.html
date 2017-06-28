@@ -1,0 +1,37 @@
+<html>
+  <script>
+    function encode(plaintxt, rails) {
+      var railCode = [];
+      var railAssignment = 0;
+      var increment = true;
+
+      plaintxt = plaintxt.replace(/ /g, '').toUpperCase();
+
+      for (var i = 1; i <= rails; i++) {
+        railCode.push([]);
+      }
+
+      plaintxt.split('').forEach(function(char) {
+        railCode[railAssignment].push(char);
+
+        if (railAssignment === railCode.length - 1) {
+          increment = false;
+        } else if (railAssignment === 0) {
+          increment = true;
+        }
+
+        increment ? railAssignment++ : railAssignment--;
+      });
+
+      return railCode.map(function(rail) {
+        return rail.join('');
+      }).join('');
+    }
+
+    console.log(encode('WE ARE DISCOVERED FLEE AT ONCE', 3));
+    // WECRLTEERDSOEEFEAOCAIVDEN
+
+    console.log(encode('Hi Everyone', 2));
+    // HEEYNIVROE
+  </script>
+</html>
