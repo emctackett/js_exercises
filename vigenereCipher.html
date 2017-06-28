@@ -1,0 +1,36 @@
+<html>
+  <script>
+    function newIdx(idx, key) {
+      return (idx + key) % 26;
+    }
+
+    function getCaesarChar(plaintxt, shiftChar) {
+      var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+      var currentIdx = alphabet.indexOf(plaintxt.toLowerCase());
+      var shiftValue = alphabet.indexOf(shiftChar.toLowerCase());
+      var newLetter = alphabet[newIdx(currentIdx, shiftValue)];
+      return plaintxt.match(/[A-Z]/) ? newLetter.toUpperCase() : newLetter;
+    }
+
+
+    function vigenere(plaintext, keyword) {
+      var keyIdx = -1;
+
+      return plaintext.split('').map(function(char) {
+        if (char.match(/[^a-z]/i)) {
+          return char;
+        } else {
+          keyIdx === keyword.length - 1 ? keyIdx = 0 : keyIdx++;
+          return getCaesarChar(char, keyword[keyIdx]);
+        }
+      }).join('');
+    }
+
+    console.log(vigenere("Pineapples don't go on pizzas!", 'meat'));
+    // Bmnxmtpeqw dhz'x gh ar pbldal!
+    console.log(vigenere("Apple", 'meat'));
+    //mtpeq
+    console.log(vigenere("a2p-p.le", 'meat'));
+    //m2t-p.eq
+  </script>
+</html>
