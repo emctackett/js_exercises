@@ -1,0 +1,42 @@
+<html>
+  <script>
+    function printRow(padding, spacing) {
+      var pad = ' '.repeat(padding);
+      var space = ' '.repeat(spacing);
+      console.log(pad + '*' + space + '*' + space + '*' + pad);
+    }
+
+    function buildTop(padding, spacing, n) {
+      while (padding * 2 <= (n - 3)) {
+        printRow(padding, spacing);
+        padding += 1;
+        spacing -= 1;
+      }
+    }
+
+    function buildBottom(padding, spacing) {
+      padding = spacing;
+      spacing = 0;
+      while (padding >= 0) {
+        printRow(padding, spacing);
+        padding -=1;
+        spacing += 1;
+      }
+    }
+
+    function star(n) {
+      var centerLine = '*'.repeat(n);
+      var spacing = (n - 3) / 2;
+      var padding = (n - 3 - (spacing * 2)) / 2;
+
+      buildTop(padding, spacing, n);
+      console.log(centerLine);
+      buildBottom(padding, spacing);
+    }
+
+    console.log(star(7));
+    console.log(star(9));
+    console.log(star(12));
+    console.log(star(15));
+  </script>
+</html>
